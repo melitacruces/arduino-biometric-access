@@ -40,14 +40,14 @@ La idea central: **el Arduino no guarda los datos de los usuarios**. El _sensor_
 
 ### Conexiones (pinout del Arduino Uno)
 
-| Periférico             | Pines del Arduino       |
-| ---------------------- | ----------------------- |
-| Sensor AS608           | `10` (RX) y `11` (TX)   |
-| Teclado 4x4 - filas    | `9, 8, 7, 6`            |
-| Teclado 4x4 - columnas | `5, 4, 3, 2`            |
-| LCD I2C                | `A4` (SDA) y `A5` (SCL) |
-| Relé + Cerradura       | `13`                    |
-| PC                     | USB                     |
+| Periférico             | Pines del Arduino        |
+| ---------------------- | ------------------------ |
+| Sensor AS608           | `10` (RX) y `11` (TX).   |
+| Teclado 4x4 - Filas    | `9, 8, 7, 6`.            |
+| Teclado 4x4 - Columnas | `5, 4, 3, 2`.            |
+| LCD I2C                | `A4` (SDA) y `A5` (SCL). |
+| Relé + Cerradura       | `13`.                    |
+| PC                     | USB.                     |
 
 > ⚠️ Ojo con los dos baud rates: la comunicación **PC ↔ Arduino** es a **9600**, mientras que la del **Arduino ↔ sensor AS608** (por `SoftwareSerial`) es a **57600**.
 
@@ -78,30 +78,30 @@ La idea central: **el Arduino no guarda los datos de los usuarios**. El _sensor_
 
 ```text
 /
-├── app/                          # Aplicación de escritorio (Python + customtkinter)
-│   ├── principal.py              #   Menú principal (punto de entrada)
-│   ├── login.py                  #   Login de administrador (.env o BD)
-│   ├── ingresar.py               #   Modo verificación: puente serial ↔ MySQL
-│   ├── gestionar.py              #   CRUD de usuarios + registro de huellas
-│   ├── arduino_uploader.py       #   Auto-flasheo con arduino-cli
-│   └── .env.example              #   Plantilla de credenciales maestras
-├── arduino/                      # Firmware que la app sube automáticamente
-│   ├── ingresar/ingresar.ino     #   Verificación de acceso (huella + PIN)
-│   └── insertar/insertar.ino     #   Enrolamiento de huella
-├── herramientas-sensor/          # Sketches de mantenimiento del sensor (manual, IDE Arduino)
-│   ├── enroll.ino                #   Registrar huella sin base de datos
-│   ├── delete.ino                #   Borrar una huella por ID
-│   ├── empty.ino                 #   Vaciar TODO el sensor (irreversible)
+├── app/                          # Aplicación de escritorio (Python + customtkinter).
+│   ├── principal.py              #   Menú principal (punto de entrada).
+│   ├── login.py                  #   Login de administrador (.env o BD).
+│   ├── ingresar.py               #   Modo verificación: puente serial ↔ MySQL.
+│   ├── gestionar.py              #   CRUD de usuarios + registro de huellas.
+│   ├── arduino_uploader.py       #   Auto-flasheo con arduino-cli.
+│   └── .env.example              #   Plantilla de credenciales maestras.
+├── arduino/                      # Firmware que la app sube automáticamente.
+│   ├── ingresar/ingresar.ino     #   Verificación de acceso (huella + PIN).
+│   └── insertar/insertar.ino     #   Enrolamiento de huella.
+├── herramientas-sensor/          # Sketches de mantenimiento del sensor (manual, IDE Arduino).
+│   ├── enroll.ino                #   Registrar huella sin base de datos.
+│   ├── delete.ino                #   Borrar una huella por ID.
+│   ├── empty.ino                 #   Vaciar TODO el sensor (irreversible).
 │   └── README.md
 ├── database/
-│   ├── database.sql                # Crea la tabla `usuarios` (BD `proyecto_huella`)
-│   └── documentacion-database.pdf  # Documentación de la base de datos
-├── tools/                        # Dependencias del proyecto
-│   ├── arduino-cli.exe           #   Compilador/uploader usado por la app
+│   ├── database.sql                # Crea la tabla `usuarios` (BD `proyecto_huella`).
+│   └── documentacion-database.pdf  # Documentación de la base de datos.
+├── tools/                        # Dependencias del proyecto.
+│   ├── arduino-cli.exe           #   Compilador/uploader usado por la app.
 │   └── librerias/
-│       ├── arduino/*.zip         #   Librerías Arduino (Adafruit_Fingerprint, Keypad, LCD…)
+│       ├── arduino/*.zip         #   Librerías Arduino (Adafruit_Fingerprint, Keypad, LCD…).
 │       └── python/instalacion.ipynb
-├── media/                        # Imágenes usadas por este README
+├── media/                        # Imágenes usadas por este README.
 └── README.md
 ```
 
