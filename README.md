@@ -78,30 +78,30 @@ La idea central: **el Arduino no guarda los datos de los usuarios**. El _sensor_
 
 ```text
 /
-├── app/                          # Aplicación de escritorio (Python + customtkinter).
-│   ├── principal.py              #   Menú principal (punto de entrada).
-│   ├── login.py                  #   Login de administrador (.env o BD).
-│   ├── ingresar.py               #   Modo verificación: puente serial ↔ MySQL.
-│   ├── gestionar.py              #   CRUD de usuarios + registro de huellas.
-│   ├── arduino_uploader.py       #   Auto-flasheo con arduino-cli.
-│   └── .env.example              #   Plantilla de credenciales maestras.
-├── arduino/                      # Firmware que la app sube automáticamente.
-│   ├── ingresar/ingresar.ino     #   Verificación de acceso (huella + PIN).
-│   └── insertar/insertar.ino     #   Enrolamiento de huella.
-├── herramientas-sensor/          # Sketches de mantenimiento del sensor (manual, IDE Arduino).
-│   ├── enroll.ino                #   Registrar huella sin base de datos.
-│   ├── delete.ino                #   Borrar una huella por ID.
-│   ├── empty.ino                 #   Vaciar TODO el sensor (irreversible).
+├── app/                             # Aplicación de escritorio (Python + customtkinter).
+│   ├── principal.py                 # Menú principal (punto de entrada).
+│   ├── login.py                     # Login de administrador (.env o BD).
+│   ├── ingresar.py                  # Modo verificación: puente serial ↔ MySQL.
+│   ├── gestionar.py                 # CRUD de usuarios + registro de huellas.
+│   ├── arduino_uploader.py          # Auto-flasheo con arduino-cli.
+│   └── .env.example                 # Plantilla de credenciales maestras.
+├── arduino/                         # Firmware que la app sube automáticamente.
+│   ├── ingresar/ingresar.ino        # Verificación de acceso (huella + PIN).
+│   └── insertar/insertar.ino        # Enrolamiento de huella.
+├── herramientas-sensor/             # Sketches de mantenimiento del sensor (manual, IDE Arduino).
+│   ├── enroll.ino                   # Registrar huella sin base de datos.
+│   ├── delete.ino                   # Borrar una huella por ID.
+│   ├── empty.ino                    # Vaciar TODO el sensor (irreversible).
 │   └── README.md
 ├── database/
-│   ├── database.sql                # Crea la tabla `usuarios` (BD `proyecto_huella`).
-│   └── documentacion-database.pdf  # Documentación de la base de datos.
-├── tools/                        # Dependencias del proyecto.
-│   ├── arduino-cli.exe           #   Compilador/uploader usado por la app.
+│   ├── database.sql                 # Crea la tabla `usuarios` (BD `proyecto_huella`).
+│   └── documentacion-database.pdf   # Documentación de la base de datos.
+├── tools/                           # Dependencias del proyecto.
+│   ├── arduino-cli.exe              # Compilador/uploader usado por la app.
 │   └── librerias/
-│       ├── arduino/*.zip         #   Librerías Arduino (Adafruit_Fingerprint, Keypad, LCD…).
+│       ├── arduino/*.zip            # Librerías Arduino (Adafruit_Fingerprint, Keypad, LCD…).
 │       └── python/instalacion.ipynb
-├── media/                        # Imágenes usadas por este README.
+├── media/                           # Imágenes usadas por este README.
 └── README.md
 ```
 
